@@ -7,6 +7,11 @@ matrix:
       services:
         - docker
       env: OSNAME=linux_openresty
+    - os: linux
+      arch: arm64
+      services:
+        - docker
+      env: OSNAME=linux_openresty
     - os: osx
       env: OSNAME=osx_openresty
       cache:
@@ -18,10 +23,26 @@ matrix:
         - docker
       env: OSNAME=linux_tengine
     - os: linux
+      arch: arm64
+      services:
+        - docker
+      env: OSNAME=linux_tengine
+
+    - os: linux
+      services:
+        - docker
+      env: OSNAME=linux_apisix_master_luarocks
+    - arch: arm64
+      os: linux
       services:
         - docker
       env: OSNAME=linux_apisix_master_luarocks
     - os: linux
+      services:
+        - docker
+      env: OSNAME=linux_apisix_current_luarocks
+    - arch: arm64
+      os: linux
       services:
         - docker
       env: OSNAME=linux_apisix_current_luarocks
